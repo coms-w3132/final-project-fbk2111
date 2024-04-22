@@ -1,31 +1,36 @@
 import tkinter as tk
-
-def check_name():
-    name = entry.get()
-    if name == "Filimon":
-        word.config(text="Authorized")
-    else:
-        word.config(text="")
-
-def on_enter(event):
-    entry.focus_set()
-
+from PIL import Image, ImageTk
+import os
 root = tk.Tk()
-root.title("Crypto Trading App")
+root.title('Crypto')
+root.geometry('400x400')
 
-label = tk.Label(root, text="Name:")
-label.grid(row=0, column=0, padx=10, pady=10)
+def set_image():
+    try:
+        image_path = 'sodapdf-converted.gif'
+        image = Image.open(image_path)
+        photo = ImageTk.PhotoImage(image)
+        img_lb.config(image=photo)
+        img_lb.image = photo
+    except Exception as e:
+        print("Error loading image:", e)
 
-entry = tk.Entry(root)
-entry.grid(row=0, column=1, padx=10, pady=10)
-
-check_button = tk.Button(root, text="Check Name", command=check_name)
-check_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
-
-word = tk.Label(root, text="")
-word.grid(row=2, column=0, columnspan=2)
-
-root.bind("<Enter>", on_enter)  # Bind mouse enter event to set focus on entry
+img_lb = tk.Label(root)
+img_lb.pack(pady=10)
+set_image()
 
 root.mainloop()
 
+
+
+
+'''
+external application
+one button - for fetching market data
+one button - to trade, we put the price, and the amount
+one button - to analyze the data saved
+their should be an api call where everything is put in a graph where it
+shows the price fluctuation 
+a button for an exit
+
+'''
