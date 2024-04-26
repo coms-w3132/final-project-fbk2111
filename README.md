@@ -4,7 +4,7 @@
 Filimon Keleta, fbk2111
 
 ## Project Title
-Cryptotrading bot in Kraken (paper trading simulation)
+Cryptotrading bot in Alpaca (paper trading simulation)
 
 ## Project Description
 
@@ -31,33 +31,33 @@ I anticipate that this project will be of significant interest to cryptocurrency
 
 ## Requirements, Features and User Stories
 
-1. Real-time Market Analysis: Utilize Kraken's API to fetch real-time market data, including price movements, order book depth, and trade history, for accurate analysis.
+1. Real-time Market Analysis: Utilize Alpaca's API to fetch real-time market data, including price movements, order book depth, and trade history, for accurate analysis.
 2. Customizable Trading Strategies: Develop a modular and flexible trading strategy system that allows users to define their own criteria for buying and selling cryptocurrencies. Strategies should be adaptable to different market conditions and adjustable parameters.
 3. Automated Execution or Manual Control: Provide options for both automated execution based on predefined strategies and manual control where users can input specific instructions for trading actions.
 4. Market Orders and Limit Orders: Implement functionality to execute both market orders and limit orders, enabling users to buy or sell cryptocurrencies at the current market price or at a specified price respectively.
 5. Risk Management and Profit Maximization: Integrate risk management techniques to monitor market volatility, minimize losses, and maximize profits. The algorithm should dynamically adjust trading parameters to optimize performance while considering market slippage and transaction fees.
 6. Data Query and Historical Analysis: Develop a data query module to store and retrieve historical transaction data and market prices for backtesting and analysis purposes. This module should efficiently manage and organize large datasets for comprehensive market insights.
 7. Performance Tracking and Reporting: Provide users with detailed performance metrics and reports, including trade execution logs, profit/loss summaries, and strategy effectiveness analysis. This allows users to evaluate the success of their trading strategies and make informed decisions for future trades.
-8. Security and Reliability: Ensure the algorithm's robustness and reliability by implementing secure authentication mechanisms for accessing Kraken's API, handling error responses gracefully, and implementing failover mechanisms to prevent disruptions in trading operations.
+8. Security and Reliability: Ensure the algorithm's robustness and reliability by implementing secure authentication mechanisms for accessing Alpaca's API, handling error responses gracefully, and implementing failover mechanisms to prevent disruptions in trading operations.
 9. Scalability and Efficiency: Design the algorithm to be scalable to handle large volumes of data and trading requests efficiently. Employ optimization techniques to minimize latency and ensure real-time responsiveness, crucial for time-sensitive trading decisions.
 
 Requirement Analysis:
 
-- Software: Development will primarily utilize programming languages such as Python for algorithmic trading logic, data analysis, and API integration with Kraken. Additional libraries and frameworks may be used for specific functionalities such as data storage, visualization, and statistical analysis.
+- Software: Development will primarily utilize programming languages such as Python for algorithmic trading logic, data analysis, and API integration with Alpaca. Additional libraries and frameworks may be used for specific functionalities such as data storage, visualization, and statistical analysis.
 - Hardware: The software can run on standard computing hardware, including personal computers or cloud-based servers. It should be capable of handling high-frequency trading tasks efficiently, with sufficient processing power and memory resources.
-- API Integration: Utilize Kraken's API for accessing market data, placing orders, and managing trading activities. Ensure seamless integration with the API by following best practices for authentication, error handling, and rate limiting.
+- API Integration: Utilize Alpaca's API for accessing market data, placing orders, and managing trading activities. Ensure seamless integration with the API by following best practices for authentication, error handling, and rate limiting.
 - Data Management: Implement a robust data management system for storing and retrieving transaction history, market prices, and other relevant data. Consider using database systems or file storage solutions for efficient data storage and retrieval.
 - User Interface: Develop a user-friendly interface for interacting with the trading algorithm, allowing users to configure trading strategies, monitor performance, and access historical data. The interface should be intuitive, responsive, and customizable to meet diverse user needs.
   
 Product Analysis:
 
 - Market Potential: With the increasing popularity of cryptocurrency trading, there is a significant demand for advanced trading algorithms that can automate trading strategies and optimize profitability. Our product aims to cater to this market demand by providing a comprehensive solution for cryptocurrency traders.
-- Competitive Landscape: There are existing trading bots and platforms in the market offering similar functionalities. However, our product distinguishes itself by focusing on advanced trading algorithms tailored for Kraken's platform, offering customizable strategies, real-time market analysis, and robust risk management features.
+- Competitive Landscape: There are existing trading bots and platforms in the market offering similar functionalities. However, our product distinguishes itself by focusing on advanced trading algorithms tailored for Alpaca's platform, offering customizable strategies, real-time market analysis, and robust risk management features.
 - Target Audience: Our target audience includes cryptocurrency traders ranging from individual investors to institutional traders looking for sophisticated trading tools to enhance their trading strategies and maximize returns. Additionally, our product appeals to cryptocurrency enthusiasts and developers interested in algorithmic trading and market analysis.
 
  User Story:
  
-As a cryptocurrency trader, I want to utilize an advanced trading algorithm that can automate my trading strategies and optimize profitability in real-time. I want the algorithm to provide customizable trading strategies based on market analysis and historical data, allowing me to adapt to changing market conditions and maximize returns. I want the algorithm to seamlessly integrate with Kraken's API, enabling fast and reliable execution of market orders and limit orders. I also want access to comprehensive performance metrics and reports, allowing me to evaluate the success of my trading strategies and make informed decisions for future trades. Furthermore, I want the algorithm to prioritize security and reliability, ensuring the safety of my funds and providing robust risk management features to minimize losses. Overall, I expect the algorithm to enhance my trading experience by providing advanced trading functionalities, real-time market insights, and efficient execution capabilities.
+As a cryptocurrency trader, I want to utilize an advanced trading algorithm that can automate my trading strategies and optimize profitability in real-time. I want the algorithm to provide customizable trading strategies based on market analysis and historical data, allowing me to adapt to changing market conditions and maximize returns. I want the algorithm to seamlessly integrate with Alpaca's API, enabling fast and reliable execution of market orders and limit orders. I also want access to comprehensive performance metrics and reports, allowing me to evaluate the success of my trading strategies and make informed decisions for future trades. Furthermore, I want the algorithm to prioritize security and reliability, ensuring the safety of my funds and providing robust risk management features to minimize losses. Overall, I expect the algorithm to enhance my trading experience by providing advanced trading functionalities, real-time market insights, and efficient execution capabilities.
 
 ## Technical Specification
 *Detail the main algorithms, libraries, and technologies you plan to use. Explain your choice of technology and how it supports your project goals.*
@@ -65,7 +65,7 @@ I will be using:
   Pandas: Pandas is chosen for its versatility and efficiency in handling structured data, essential for processing market data and trade history in real-time. Its rich set of functions and operations enable us to perform complex data transformations and analysis, supporting the development of advanced trading strategies and risk management techniques.
   Asyncio (async/await): Asyncio is selected to enable asynchronous programming in our trading algorithm, enhancing performance and responsiveness by allowing concurrent execution of tasks. This technology choice aligns with our project goal of developing a high-performance trading bot capable of processing real-time market data and executing trades promptly, thereby maximizing trading opportunities and minimizing latency.
   Time Library: The time library provides essential functionalities for time management and scheduling in our trading algorithm. By accurately measuring time intervals, scheduling trading actions,       and implementing timeout mechanisms, we ensure timely execution of trading strategies and efficient utilization of market opportunities, supporting our project goal of optimizing profitability      and  minimizing risks.
-  API Management Library (e.g., requests): An API management library like requests is indispensable for interacting with Kraken's API and accessing cryptocurrency market data. Its simplicity and       robustness make it an ideal choice for handling HTTP requests, managing authentication, and processing API responses efficiently. By leveraging this technology, we ensure seamless integration       with   Kraken's platform, enabling reliable execution of trading actions and accurate analysis of market dynamics.
+  API Management Library (e.g., requests): An API management library like requests is indispensable for interacting with Alpaca's API and accessing cryptocurrency market data. Its simplicity and       robustness make it an ideal choice for handling HTTP requests, managing authentication, and processing API responses efficiently. By leveraging this technology, we ensure seamless integration       with   Alpaca's platform, enabling reliable execution of trading actions and accurate analysis of market dynamics.
   TA-Lib: A library for technical analysis, providing functions for calculating various technical indicators commonly used in trading strategies.
   NumPy: A fundamental package for scientific computing with Python, useful for numerical operations and array manipulation required for algorithmic trading.
   Backtrader: A popular Python library for backtesting trading strategies, allowing you to simulate trades using historical data, evaluate performance metrics, and optimize strategies.
@@ -103,14 +103,14 @@ By following this development methodology, I aim to maintain a structured and ef
 
 ## Potential Challenges and Roadblocks
 API Limitations and Rate Limits:
-  Challenge: Kraken's API may have rate limits or restrictions on the number of requests per minute/hour, which could affect the responsiveness and performance of the trading algorithm.
-  Solution: Implement rate limiting mechanisms in the trading algorithm to adhere to Kraken's API usage policies. Use techniques like request throttling, backoff strategies, and caching to manage      API calls efficiently. Consult Kraken's documentation and seek guidance from the instructor or TAs if needed.
+  Challenge: Alpaca's API may have rate limits or restrictions on the number of requests per minute/hour, which could affect the responsiveness and performance of the trading algorithm.
+  Solution: Implement rate limiting mechanisms in the trading algorithm to adhere to Alpaca's API usage policies. Use techniques like request throttling, backoff strategies, and caching to manage      API calls efficiently. Consult Alpaca's documentation and seek guidance from the instructor or TAs if needed.
 Market Data Quality and Reliability:
-  Challenge: Market data obtained from Kraken's API may be incomplete, delayed, or inconsistent, leading to inaccurate analysis and decision-making.
+  Challenge: Market data obtained from Alpaca's API may be incomplete, delayed, or inconsistent, leading to inaccurate analysis and decision-making.
   Solution: Implement data validation and error handling mechanisms to detect and handle anomalies in market data. Consider using multiple data sources or historical data backups for validation and   comparison. Collaborate with the instructor or TAs to troubleshoot data-related issues and explore alternative data providers if necessary.
 Complexity of Trading Strategies:
   Challenge: Designing and implementing advanced trading strategies with complex logic and parameters can be challenging, requiring in-depth understanding of financial markets and algorithmic trading principles.
-  Solution: Break down trading strategies into smaller, manageable components and implement them incrementally. Conduct thorough research on trading strategies, leverage existing libraries and        frameworks, and seek guidance from financial experts or instructors to validate and refine strategies effectively.
+  Solution: Break down trading strategies into smaller, manageable components and implement them incrementally. Conduct thorough research on trading strategies, leverage existing libraries and frameworks, and seek guidance from financial experts or instructors to validate and refine strategies effectively.
 Concurrency and Asynchronous Programming:
   Challenge: Implementing asynchronous programming for handling multiple concurrent tasks, such as fetching market data, analyzing strategies, and executing trades, can be complex and error-prone.
   Solution: Utilize asynchronous programming libraries like asyncio and async/await to manage concurrent tasks efficiently. Follow best practices for error handling, resource management, and task coordination. Seek assistance from instructors or TAs for understanding asynchronous programming concepts and troubleshooting concurrency issues.
@@ -132,3 +132,4 @@ Implementing and improving existing trading strategy using average crossover, RS
 Developing performance metrics to evaluate the effectiveness of trading strategies, including Sharpe ratio, maximum drawdown, win-loss ration, and risk-adjusted returns. These metrics will provide insights into the risk and return profile of the trading algorithm and help assess its profitability. 
 
 Enhance the GUI with real-time market data visualization features, including candlestick charts, volume indicators, and trend lines. This will provide users with visual insights into market trends and price movements, aiding in strategy analysis and decision-making.
+

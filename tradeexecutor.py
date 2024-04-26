@@ -83,3 +83,5 @@ alpaca_trade_api.rest.Sort] = None, raw=False)
 #implemenation for fetching market data about the symnol and logged data about the symbol
 
 #trading strategy 
+
+    
