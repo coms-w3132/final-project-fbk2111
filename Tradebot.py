@@ -5,6 +5,7 @@ from datetime import date
 from cryptobuy import buyx
 from cryptosell import sellx
 from balance import Balancex
+from records import records
 class BitcoinTraderApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -85,7 +86,8 @@ class BitcoinTraderApp(QMainWindow):
     def trading_strategy(self):
         pass
     def records(self):
-        pass
+        dialog = records()
+        dialog.exec()
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = BitcoinTraderApp()
