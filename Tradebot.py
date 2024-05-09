@@ -40,15 +40,10 @@ class BitcoinTraderApp(QMainWindow):
         self.balance_button.setStyleSheet('color: white; background-color: red; border: none; border-radius: 10px; padding: 10px; font-family: cursive; font-size: 15px;')
         self.balance_button.setParent(background_label)
 
-        self.strategy_button = QPushButton("Trading Strategy", self)
-        self.strategy_button.clicked.connect(self.trading_strategy)
-        self.strategy_button.move(700, 500)  # Adjust the position as needed
-        self.strategy_button.setStyleSheet('color: white; background-color: blue; border: none; border-radius: 10px; padding: 10px; font-family: cursive; font-size: 15px;')
-        self.strategy_button.setParent(background_label)
         
         self.record_button = QPushButton("Records", self)
         self.record_button.clicked.connect(self.records)
-        self.record_button.move(700, 600)  # Adjust the position as needed
+        self.record_button.move(700, 500)  # Adjust the position as needed
         self.record_button.setStyleSheet('color: white; background-color: green; border: none; border-radius: 10px; padding: 10px; font-family: cursive; font-size: 15px;')
         self.record_button.setParent(background_label)
         
@@ -83,8 +78,6 @@ class BitcoinTraderApp(QMainWindow):
         dialog = Balancex()
         dialog.exec()
 
-    def trading_strategy(self):
-        pass
     def records(self):
         dialog = records()
         dialog.exec()
