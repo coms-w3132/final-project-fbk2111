@@ -132,4 +132,72 @@ Implementing and improving existing trading strategy using average crossover, RS
 Developing performance metrics to evaluate the effectiveness of trading strategies, including Sharpe ratio, maximum drawdown, win-loss ration, and risk-adjusted returns. These metrics will provide insights into the risk and return profile of the trading algorithm and help assess its profitability. 
 
 Enhance the GUI with real-time market data visualization features, including candlestick charts, volume indicators, and trend lines. This will provide users with visual insights into market trends and price movements, aiding in strategy analysis and decision-making.
+**CONCLUSION** 9TH OF MAY 2024
+
+
+This Final code instead of using Kraken used Alpaca since it has paper trading simulation. Instead of creating a secondary class for Trading Strategy I was able to embedd it in the Buy and sell mechanism. 
+
+For the trading strategy i was able to use moving average for the following reasons: 
+Using moving averages in Bitcoin trading offers several potential benefits:
+
+1. Trend Identification: Moving averages help identify the direction of the trend by smoothing out short-term price fluctuations. Traders often use the relationship between short-term and long-term moving averages to determine whether the market is in an uptrend or a downtrend.
+
+2. Signal Generation: Moving averages can generate buy and sell signals based on crossovers between different moving average periods. For example, a bullish signal may occur when a shorter-term moving average crosses above a longer-term moving average, indicating a potential uptrend. Conversely, a bearish signal may occur when the opposite crossover happens.
+
+3. Risk Management: Moving averages can be used to set stop-loss levels or determine support and resistance levels. Traders may place stop-loss orders below key moving averages to limit potential losses in case the market moves against their positions.
+
+4. Confirmation Tool: Moving averages can be used to confirm other technical analysis signals or trading strategies. For example, traders may use moving averages in conjunction with other indicators, such as the Relative Strength Index (RSI) or MACD (Moving Average Convergence Divergence), to validate trade entries or exits.
+
+5. Smoothed Price Representation: Moving averages provide a smoothed representation of price data, making it easier to identify overall price trends and patterns. This can help traders filter out noise and focus on significant price movements.
+
+6. Support and Resistance Levels: Moving averages can act as dynamic support and resistance levels. In trending markets, prices often pull back to test moving averages before resuming their trend, providing opportunities for traders to enter or exit positions.
+
+I wanted users to input small numbers since the paper trading account has a limit of 100,000 so since 1 BTC cost ~65k, trading with numbers such as 0.001 or 0.05 can help not to exhaust the money. In addition the exchange platform doesn't support a bitcoin purcahse less than 0.001 coin as per the API regulation. 
+
+Account is protected with get_account verbose as False to maintain strong integrity when it comes to cyber security. 
+Manual testing was done, and I have added the amount of coins bought or sold to transaction.txt to prove that it works. 
+PyQt5 module was used to create the GUI or user interface. 
+moving average was used as a strategy coping mechanism.
+API was configuered to handle tons of transaction within seconds. 
+I used bottom- Up approach to breakdown into different classes and modules for maximum efficency.
+if everything was in a single class and single module it would have been over 500 lines of code. 
+Code has efficient documentation and comments. variable used are easy to understand
+other modules used include Alpaca API
+                           Pandas
+                           Matplotlib
+                           datetime
+                           pyQt5
+                           collections - for queue
+Every class creates an instance of itself to create a separate working application and finally intergrated into a main big one. 
+
+Possible Next Steps
+Enhanced Trading Strategy: refining the trading strategy by incorporating additional technical indicators or machine learning algorithms for better decision-making.
+Real-Time Data Streaming: Explore integrating real-time data streaming to make more timely trading decisions.
+User Interface Improvements: Enhance the user interface to provide more intuitive controls and better visualizations of trading data.
+Risk Management Features: Implement risk management features such as stop-loss orders, position sizing, and portfolio rebalancing and more order types like limit order, free order, commission fees, and dues. 
+
+Classes and Files
+Cryptobuy.py - buying platform with all available bitcoins and its quotes, it also includes buying stratgy and data logging of bought items. In addition, it includes a graphical representation of price history of the bitcoin to be purchased
+cryptosell.py - selling platforms will all available bitcoin and its quotes, it also includes selling strategy and data logging of sold items. In addition, it includes a graphical price difference of the single most bitcoin markets Etherium and Bitcoin. 
+InputData.py - includes handling secret keyword, fetching api and establishing REST connection
+records.py -  it includes fethcing current market data of the bitcoin to be bought, with the high, low close value, the volume or the amount of orders to be filled currently amongst worldwide users, date and history information. this helps user to make informed decision 
+api.txt - contains passkey, api ... 
+Tradebot.py - includes the GUI interface of all the basic feautres of the applications, this includes, buy, sell, record, and balance
+Balance.py - use account information to obtain current price left in the account, how to fetch that data while still keeping the sensitive information hidden. 
+transaction.txt - includes the history of all current transaction that happened and logs in every information about item bought or sold. 
+
+Reflection 
+Reflecting on the journey of developing the trading application revealed various challenges, invaluable lessons, and notable achievements. The project not only met but exceeded initial objectives by delivering robust buy and sell functionalities, comprehensive record-keeping capabilities, a sophisticated trading bot, and effective trading strategy logging. The experience highlighted the significance of meticulous planning, adaptability to evolving requirements, and the collaborative nature of software development. Looking ahead, there remains ample room for improvement and expansion, including refining trading strategies, enhancing user experience, and incorporating advanced risk management techniques.
+Throughout the development of this project, I've gained valuable insights into building trading applications and integrating APIs. Here's a brief reflection on my experience:
+ Lessons Learned:
+- What Worked: The modular approach to code organization facilitated scalability and ease of maintenance. Integration with the Alpaca API provided robust functionality for executing trades and accessing market data.
+- What Did Not: Initially, managing asynchronous tasks and handling API responses proved challenging. Ensuring proper error handling and data validation were also areas of focus.
+- What I Would Do Differently: If starting again, I would dedicate more time to comprehensive testing and validation of edge cases. Additionally, I would explore alternative trading strategies and incorporate more advanced technical indicators for improved decision-making.
+
+In summary, the project allowed me to deepen my understanding of financial markets, API integration, and software architecture. Moving forward, I'll continue to refine my skills and explore new opportunities in algorithmic trading and financial technology.
+I learned a lot of things, the basis of user interface and GUI, handling and fethcing data using API's. It was a nice project that helped my knowledge in financial engineering and algorithmic trading. It was challenging at time but thanks to the teaching staff i now can say I made it :)
+
+Thank you !!! 
+
+Filimon Keleta
 
