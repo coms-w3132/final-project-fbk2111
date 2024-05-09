@@ -4,13 +4,28 @@ from InputData import InputData
 import pandas as pd
 
 class Trading:
+    
     def __init__(self) -> None:
         base_url, key_id, secret_key = InputData.get_credentials()
         self.api = REST(key_id=key_id, secret_key=secret_key, base_url=base_url)
 
-      
+        
     def get_crypto_bars(self, symbol, timeframe):
-        bars = self.api.get_crypto_bars(symbol, timeframe).df
+        """
+    Fetch cryptocurrency bars and statistics for a given symbol and timeframe.
+
+    Calls the get_crypto_bars method of the API instance with the specified symbol and timeframe.
+    Returns the DataFrame containing the fetched bars and statistics.
+
+    Args:
+        symbol: The cryptocurrency symbol to fetch bars for.
+        timeframe: The timeframe for the bars (e.g., TimeFrame.Minute, TimeFrame.Hour).
+
+    Returns:
+        pandas DataFrame: A DataFrame containing the fetched bars and statistics.
+
+        """
+        bars = self.api.get_crypto_bars(symbol, timeframe).df #fetch crypto bars and stats 
         return bars
 
 
@@ -71,6 +86,17 @@ class records(QDialog):
         self.quote_combo.clear()
         self.quote_combo.addItems(quotes.get(base, []))
     def execute_record(self):
+        """
+    Display market data in HTML format based on the selected base currency and timeframe.
+
+    Creates an instance of the Trading class.
+    Extracts the base currency from the selected base_combo text.
+    Gets the selected timeframe from the quote_combo.
+    Calls the get_crypto_bars method of the Trading instance based on the selected base currency and timeframe.
+    If market data is available, converts it to HTML format and sets it in the result_box widget.
+    If no market data is available, displays a message indicating that the trading exchange platform is working on it.
+
+        """
         trading = Trading()
         base_text = self.base_combo.currentText()
         base = base_text.split()[-1]  # Extracting the symbol and currency pair

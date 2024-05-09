@@ -22,3 +22,12 @@ Balance: 99755.51
 Log Entry Time: 2024-05-09 18:24:49.645353
 You have sold 0.001 amount of BTC coin. Congrats.
 Balance: 99755.51
+Log Entry Time: 2024-05-09 19:31:24.930750
+You have sold 0.001 amount of ETH coin. Congrats.
+Balance: 99818.18
+Log Entry Time: 2024-05-09 19:31:40.079652
+You have bought 0.001 amount of ETH coin. Congrats.
+Balance: 99818.11
+Log Entry Time: 2024-05-09 19:32:03.763399
+You have bought 0.001 amount of BTC coin. Congrats.
+Balance: 99755.01

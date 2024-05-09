@@ -7,6 +7,24 @@ from cryptosell import sellx
 from balance import Balancex
 from records import records
 class BitcoinTraderApp(QMainWindow):
+    """
+    A class representing the Bitcoin Trader application window.
+
+    Attributes:
+        sell_button: A button for initiating sell operations.
+        buy_button: A button for initiating buy operations.
+        balance_button: A button for viewing account balance.
+        record_button: A button for accessing transaction records.
+        record: A label displaying copyright information.
+
+    Methods:
+        __init__: Initialize the BitcoinTraderApp class and set up the user interface.
+        buy: Open a dialog for buying cryptocurrency.
+        sell: Open a dialog for selling cryptocurrency.
+        see_balance: Open a dialog for viewing account balance.
+        records: Open a dialog for accessing transaction records.
+
+    """
     def __init__(self):
         super().__init__()
         self.initUI()

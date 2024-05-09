@@ -13,6 +13,15 @@ class Trading:
         return api
 
 class buyx(QDialog):
+    """
+    Initialize the Crypto BUY Alpaca application window.
+
+    Sets the window title and initializes the UI elements.
+
+    Args:
+        parent: Optional parent widget.
+
+    """
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Crypto Purchase Alpaca")
@@ -57,6 +66,19 @@ class buyx(QDialog):
         layout.addWidget(self.plot_view)
         self.setLayout(layout)
     def update_quote_options(self):
+        """
+        Update the options available for selecting a quote currency based on the selected base currency.
+
+        Retrieves the currently selected base currency from the base_combo widget and updates the available
+        options in the quote_combo widget accordingly.
+
+        Available quote options are stored in a dictionary where the keys represent base currencies and the values
+        are lists of corresponding quote currencies.
+
+        Example:
+        If "BTC" is selected as the base currency, the available quote currencies will be ["BCH", "ETH", "LTC", "UNI"].
+
+        """
         base = self.base_combo.currentText()
         quotes = {
             "BTC": ["BCH", "ETH", "LTC", "UNI"],
@@ -67,6 +89,19 @@ class buyx(QDialog):
         self.quote_combo.clear()
         self.quote_combo.addItems(quotes.get(base, []))
     def execute_buy(self):
+        """
+        Execute a buy order based on the selected base currency.
+
+        If the base currency is "BTC", the purchase quote will be set to "BTC/USD", otherwise "ETH/USD" will be used.
+        Retrieves the amount to buy from the amount_edit widget.
+        Defines a start and end date for retrieving historical data.
+        Retrieves historical price data for the chosen purchase quote.
+        Calculates short and long moving averages.
+        Executes a buy order if the amount to buy is greater than 0.5 and the short moving average is greater than the long moving average.
+        Updates UI labels with transaction information and plots the price of the chosen cryptocurrency over time.
+        Logs transaction details to a text file.
+
+        """
         purchase_quotes = None
         if self.base_combo.currentText() == "BTC":
             purchase_quotes = "BTC"
@@ -104,7 +139,7 @@ class buyx(QDialog):
                 long_maqueue_avg = sum(long_maqueue) / long_window
                 
                 if short_maqueue_avg > long_maqueue_avg:
-                    
+                    # if the short moving aveage is greater than long moving average we buy
                     buy = api.submit_order(purchase_quote, qty=amount, side='buy', time_in_force=time_in_forces)
                     if buy is not None:   
                         self.result_label.setText(f'you have bought {amount} of {purchase_quotes}. Congrats.')

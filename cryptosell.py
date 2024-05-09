@@ -14,6 +14,15 @@ class Trading:
         return api
     
 class sellx(QDialog):
+    """
+    Initialize the Crypto Sell Alpaca application window.
+
+    Sets the window title and initializes the UI elements.
+
+    Args:
+        parent: Optional parent widget.
+
+    """
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Crypto Sell Alpaca")
@@ -21,6 +30,12 @@ class sellx(QDialog):
         
         
     def initUI(self):
+        """
+        Initialize the user interface elements.
+
+        Sets up layout, labels, combo boxes, input fields, buttons, and placeholders for result messages.
+
+         """
         layout = QVBoxLayout()
         base_label = QLabel("Base Bitcoin:")
         self.base_combo = QComboBox()
@@ -60,6 +75,19 @@ class sellx(QDialog):
         layout.addWidget(self.plot_view)
         self.setLayout(layout)
     def update_quote_options(self):
+        """
+        Update the options available for selecting a quote currency based on the selected base currency.
+
+        Retrieves the currently selected base currency from the base_combo widget and updates the available
+        options in the quote_combo widget accordingly.
+
+        Available quote options are stored in a dictionary where the keys represent base currencies and the values
+        are lists of corresponding quote currencies.
+
+        Example:
+        If "BTC" is selected as the base currency, the available quote currencies will be ["BCH", "ETH", "LTC", "UNI"].
+
+        """
         base = self.base_combo.currentText()
         quotes = {
             "BTC": ["BCH", "ETH", "LTC", "UNI"],
@@ -70,6 +98,19 @@ class sellx(QDialog):
         self.quote_combo.clear()
         self.quote_combo.addItems(quotes.get(base, []))
     def execute_sell(self):
+        """
+        Execute a sell order based on the selected base currency.
+
+        If the base currency is "BTC", the purchase quote will be set to "BTC/USD", otherwise "ETH/USD" will be used.
+         Retrieves the amount to sell from the amount_edit widget.
+         Defines a start and end date for retrieving historical data.
+        Retrieves historical price data for the chosen purchase quote.
+        Calculates short and long moving averages.
+        Executes a sell order if the amount to sell is greater than 0.5 and the short moving average is less than the long moving average.
+        Updates UI labels with transaction information and plots the price difference between BTC and ETH over time.
+        Logs transaction details to a text file.
+
+        """
         purchase_quotes = None
         if self.base_combo.currentText() == "BTC":
             purchase_quotes = "BTC"
@@ -107,7 +148,7 @@ class sellx(QDialog):
                 long_maqueue_avg = sum(long_maqueue) / long_window
                 
                 if short_maqueue_avg < long_maqueue_avg:
-        
+                    # if the short moving aveage is less than long moving average we sell
                     sell = api.submit_order(purchase_quote, qty=amount, side='sell', time_in_force=time_in_forces)
                     
                     if sell is not None:
@@ -128,7 +169,7 @@ class sellx(QDialog):
                         canvas = FigureCanvas(fig)
                         scene = QGraphicsScene()
                         scene.addWidget(canvas)
-                        
+                        #ploys the difference between BTC and ETH over time
                         self.plot_view.setScene(scene)
                         current_date_time = datetime.datetime.now()
                         f = open("transaction.txt", "a")
