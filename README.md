@@ -197,6 +197,11 @@ Throughout the development of this project, I've gained valuable insights into b
 In summary, the project allowed me to deepen my understanding of financial markets, API integration, and software architecture. Moving forward, I'll continue to refine my skills and explore new opportunities in algorithmic trading and financial technology.
 I learned a lot of things, the basis of user interface and GUI, handling and fethcing data using API's. It was a nice project that helped my knowledge in financial engineering and algorithmic trading. It was challenging at time but thanks to the teaching staff i now can say I made it :)
 
+**Installation Guide **
+
+Tradeboy is the main application that make uses different functionalities of other classes - and still we can run individual modules to run the program. 
+
+
 Thank you !!! 
 
 Filimon Keleta
