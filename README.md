@@ -132,6 +132,7 @@ Implementing and improving existing trading strategy using average crossover, RS
 Developing performance metrics to evaluate the effectiveness of trading strategies, including Sharpe ratio, maximum drawdown, win-loss ration, and risk-adjusted returns. These metrics will provide insights into the risk and return profile of the trading algorithm and help assess its profitability. 
 
 Enhance the GUI with real-time market data visualization features, including candlestick charts, volume indicators, and trend lines. This will provide users with visual insights into market trends and price movements, aiding in strategy analysis and decision-making.
+
 **CONCLUSION** 9TH OF MAY 2024
 
 
@@ -196,13 +197,10 @@ Throughout the development of this project, I've gained valuable insights into b
 
 In summary, the project allowed me to deepen my understanding of financial markets, API integration, and software architecture. Moving forward, I'll continue to refine my skills and explore new opportunities in algorithmic trading and financial technology.
 I learned a lot of things, the basis of user interface and GUI, handling and fethcing data using API's. It was a nice project that helped my knowledge in financial engineering and algorithmic trading. It was challenging at time but thanks to the teaching staff i now can say I made it :)
-
-**Installation Guide **
-
-Tradeboy is the main application that make uses different functionalities of other classes - and still we can run individual modules to run the program. 
-
+ 
+ **Installation Guide**
+Tradebot.py is the main bot, when you run and click on its different part we can utilize its different functions and classes. Other class depends on it. 
 
 Thank you !!! 
 
 Filimon Keleta
-
